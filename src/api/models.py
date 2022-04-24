@@ -1,4 +1,5 @@
 from django.db import models
+from utils import models as utils_mod
 
 
 class Warehouse(models.Model):
@@ -19,9 +20,13 @@ class Products(models.Model):
 	"""Таблица с предлагаемыми товарами"""
 	name = models.CharField('Название', max_length=256)
 	description = models.TextField('Описание', blank=True, null=True)
-	materials = models.ManyToManyField('Warehouse')
+	materials = models.ManyToManyField('warehouse')
 	cost = models.DecimalField('Стоимость(опц)', decimal_places=2, blank=True, null=True)
-	# image = models.ImageField() # DON'T FORGET TO CONFIG SIGNALS
+	image = models.ImageField(upload_to=utils_mod.media_namer, null=True)
 	
 	class Meta:
 		db_table = "products"
+
+
+# class Orders(models.Model):
+# 	"""Таблица для заказов"""   # Нужно сделать, когда прикрутится телега для указателей на ID
