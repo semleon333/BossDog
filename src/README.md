@@ -17,7 +17,8 @@ Install and run postgresql on your server:
     sudo apt install postgresql postgresql-contrib
     sudo systemctl start postgresql.service
 
-Then rename **.env.dist** to **.env** and replace all values in this file with yours.
+Then rename **.env.dist** to **.env** and replace all values in this file with yours.<br>
+Set this values into DATABASE variable in **config/settings.py**
 
 After that, get PostgreSQL shell:
 
