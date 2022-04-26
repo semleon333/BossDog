@@ -36,7 +36,8 @@ Create virtual environment and install dependencies:
 
     python -m venv venv && . ./venv/bin/activate && pip install -r requirements.txt
 
-Then make django migrations and start server:
+Then make django migrations, add superuser and start server:
 
     ./manage.py makemigrations && ./manage.py migrate
+    ./manage.py createsuperuser
     ./manage.py runserver
