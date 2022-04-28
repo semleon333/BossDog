@@ -17,8 +17,11 @@ Install and run postgresql on your server:
     sudo apt install postgresql postgresql-contrib
     sudo systemctl start postgresql.service
 
-Then rename **.env.dist** to **.env** and replace all values in this file with yours.<br>
-Set this values into DATABASE variable in **config/settings.py**
+Install all python and project dependencies:
+
+    sudo apt install python3 python3-pip python3-dev libpq-dev
+
+Then rename **.env.dist** to **.env** and replace all values in this file with yours.
 
 After that, get PostgreSQL shell:
 
@@ -34,10 +37,16 @@ and configure database and user (all values in "<>" must match with .env):
 
 Create virtual environment and install dependencies:
 
-    python -m venv venv && . ./venv/bin/activate && pip install -r requirements.txt
+    python3 -m venv venv && . ./venv/bin/activate && pip install -r requirements.txt
 
 Then make django migrations, add superuser and start server:
 
     ./manage.py makemigrations && ./manage.py migrate
+
+Create superuser:
+
     ./manage.py createsuperuser
+
+And run debug server:
+
     ./manage.py runserver
