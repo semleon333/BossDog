@@ -23,6 +23,8 @@ Install all python and project dependencies:
 
 Then rename **.env.dist** to **.env** and replace all values in this file with yours.
 
+    mv ./.env.dist ./env
+
 After that, get PostgreSQL shell:
 
     sudo -u postgres psql postgres
@@ -34,7 +36,6 @@ and configure database and user (all values in "<>" must match with .env):
     GRANT ALL ON DATABASE <DB_NAME> TO <DB_USER>;
     \q
     
-
 Create virtual environment and install dependencies:
 
     python3 -m venv venv && . ./venv/bin/activate && pip install -r requirements.txt
