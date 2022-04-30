@@ -23,7 +23,7 @@ Install all python and project dependencies:
 
 Then rename **.env.dist** to **.env** and replace all values in this file with yours.
 
-    mv ./.env.dist ./env
+    mv .env.dist .env
 
 After that, get PostgreSQL shell:
 
