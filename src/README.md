@@ -19,7 +19,7 @@ Install and run postgresql on your server:
 
 Install all python and project dependencies:
 
-    sudo apt install python3 python3-pip python3-dev libpq-dev
+    sudo apt install python3 python3-pip python3-venv python3-dev libpq-dev
 
 Then rename **.env.dist** to **.env** and replace all values in this file with yours.
 
