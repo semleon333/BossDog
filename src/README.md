@@ -1,16 +1,21 @@
 
 # Set up project for tests:
 
-> #### There are two ways to do that:
->
->1. Using PostgreSQL
->2. Using SQLite
 
-### 1. Config with PostgreSQL
+## 1. Config with PostgreSQL
 
 Clone this repo and switch to Django-dev branch with this command:
 
     git clone -b django_setup https://github.com/semleon333/BossDog.git && cd BossDog/src
+
+### Autoinstallation
+
+Give permission and run install.sh
+
+    sudo chmod u+x install.sh && ./install.sh
+
+
+### Manual installation
 
 Install and run postgresql on your server:
 
@@ -23,7 +28,7 @@ Install all python and project dependencies:
 
 Then rename **.env.dist** to **.env** and replace all values in this file with yours.
 
-    mv .env.dist .env
+    cp .env.dist .env
 
 After that, get PostgreSQL shell:
 
