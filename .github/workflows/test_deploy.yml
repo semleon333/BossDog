@@ -1,0 +1,35 @@
+# https://coderflex.com/blog/2-easy-steps-to-automate-a-deployment-in-a-vps-with-github-actions
+
+name: Deploy
+
+on: 
+  push: 
+    branches: [ django_setup ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Copy repository contents via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.LARS_IONOS_HOST }}
+        USERNAME: ${{ secrets.LARS_IONOS_USERNAME }}
+        PORT: ${{ secrets.LARS_IONOS_PORT }}
+        KEY: ${{ secrets.LARS_IONOS_SSHKEY }}
+      with:
+        source: "."
+        target: "/test"
+
+    - name: Executing remote command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LARS_IONOS_HOST }}
+        USERNAME: ${{ secrets.LARS_IONOS_USERNAME }}
+        PORT: ${{ secrets.LARS_IONOS_PORT }}
+        KEY: ${{ secrets.LARS_IONOS_SSHKEY }}
+        script: ls

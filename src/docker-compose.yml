@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: bossdog_web
+    image: bossdog/web
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "8000:8000"
+  db:
+    container_name: bossdog_db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data/pgdata
+    #ports:
+    #  - "5432:5432"

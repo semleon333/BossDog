@@ -3,4 +3,5 @@
 **/__pycache__
 src/env_vars.sh
 src/.env
-
+**/migrations/**
+media/
