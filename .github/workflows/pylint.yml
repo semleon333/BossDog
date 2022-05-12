@@ -1,10 +1,9 @@
 name: Pylint
 
 on:
-  push:
-    branches: [ main, dev, dev_test, django_setup ]
   pull_request:
-    branches: [ main, dev, dev_test, django_setup ]
+    branches:
+      - dev
 
 jobs:
   build:
