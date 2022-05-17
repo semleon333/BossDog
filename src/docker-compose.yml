@@ -1,13 +1,27 @@
 version: '3.7'
 
 services:
+  nx:
+    container_name: bd_nginx
+    image: nginx:1.21.6-alpine
+    depends_on:
+     - web
+    env_file:
+      - ./.env
+    ports:
+      - "8000:80"
+    volumes:
+      - ./static_data:/var/www/html/static
+      - ./nginx-conf.d:etc/nginx/conf.d
   web:
-    container_name: bossdog_web
+    container_name: bd_web
     image: bossdog/web
     command: python manage.py runserver 0.0.0.0:8000
     restart: always
     depends_on:
       - db
+    env_file:
+      - ./.env
     environment:
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
@@ -15,9 +29,11 @@ services:
     ports:
       - "8000:8000"
   db:
-    container_name: bossdog_db
-    image: postgres
+    container_name: bd_db
+    image: postgres:14.2-alpine3.15
     restart: always
+    env_file:
+      - ./.env
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
