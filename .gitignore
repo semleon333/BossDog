@@ -1,0 +1,7 @@
+**/.idea
+**/venv
+**/__pycache__
+src/env_vars.sh
+src/django/.env
+**/migrations/**
+media/
