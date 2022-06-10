@@ -1,8 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__left {
+    display: flex;
+    padding-right: 250px;
+}
+
+.header__right {
+    display: flex;
+    padding-left: 250px;
+}
+
+.logo_link {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: 'Hurricane', cursive;
+}
+
+.menu_icon {
+    width: 25px;
+    height: 25px;
+}
+
+.account_img {
+    width: 25px;
+    height: 25px;
+    margin-right: 35px;
+}
+
 .cart_img {
     width: 25px;
     height: 25px;
 }
 
+/* Header END */
 
 .container {
     display: flex;
