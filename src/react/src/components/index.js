@@ -3,3 +3,7 @@ export { default as Content } from './Content';
 export { default as Footer } from './Footer';
 export { default as Login } from './Login';
 export { default as ERROR_404 } from './ERROR_404';
+export { default as Register } from './Register';
+export { default as PasswordRecovery } from './PasswordRecovery';
+export { default as PasswordChange } from './PasswordChange';
+export { default as Collar } from './Collar';

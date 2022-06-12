@@ -1,0 +1,62 @@
+.title__heading {
+    font-weight: bold;
+}
+  
+.title {
+    margin: 30px 0px;
+}
+  
+.asterisk {
+    color: red;
+}
+  
+// .login {
+//     margin: 20px 0px;
+// }
+  
+.text {
+    font-size: 17px;
+}
+
+.layout_margin {
+    margin-bottom: 20px;
+}
+  
+.input {
+    width: 800px;
+    height: 35px;
+    padding: 0px 10px;
+    font-size: 17px;
+    border: 0.5px solid #1b2738;
+    outline: none;
+}
+
+.input:focus {
+    box-shadow: 4px 4px 5px  rgb(227, 227, 227);
+}
+
+.dotted_button {
+    text-decoration: none;
+    color: #1b2738;
+    border-bottom: 1px dotted #1b2738;
+    margin-right: 20px;
+}
+
+.dotted_button:hover {
+    border-bottom: 1px solid #1b2738;
+}
+
+.bold__button {
+    border: 1px solid #1b2738;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #1b2738;
+    padding: 6px 10px;
+    transition: .3s;
+}
+
+.bold__button:hover {
+   color: #1b2738;
+   background-color: white; 
+}

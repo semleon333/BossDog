@@ -8,7 +8,7 @@ const Content = () => {
         <div className="container">
             <div className="market">
                 <div className="card collar">
-                    <a href="collar/index.html" className="card_image_link"><img className="card_image" src={first} alt="Ошейник"/></a>
+                    <a href="collar" className="card_image_link"><img className="card_image" src={first} alt="Ошейник"/></a>
                     <div className="product_name">
                         <a href="/#" className="product_name">Ошейник</a>
                     </div>
