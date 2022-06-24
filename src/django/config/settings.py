@@ -18,7 +18,7 @@ if os.getenv("DJANGO_DEBUG") in ["True", "true", True]:
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
